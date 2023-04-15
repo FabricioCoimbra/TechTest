@@ -12,5 +12,4 @@
         public int? parent_id { get; set; }
         public int created_at { get; set; }
     }
-
 }

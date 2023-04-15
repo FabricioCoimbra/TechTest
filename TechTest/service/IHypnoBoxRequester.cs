@@ -1,9 +1,9 @@
 ﻿using TechTest.Model;
 
-namespace TechTest.service
+namespace TechTest.Service
 {
     public interface IHypnoBoxRequester
     {
-        Task<List<Article>> GetArticlesFromAPI();
+        ValueTask<List<Article>> GetArticlesFromAPI();
     }
 }

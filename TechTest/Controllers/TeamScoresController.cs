@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TechTest.Model;
-using TechTest.service;
+using TechTest.Service;
 
 namespace TechTest.Controllers
 {
@@ -17,6 +17,11 @@ namespace TechTest.Controllers
             this.logger = logger;
         }
         // GET: api/<TeamScoresController>/ComputeTotalTeamScores
+        /// <summary>
+        /// Compute the total number of matches of team A where team A has scored less  than or equal to the number of goals scored by team B in that match
+        /// </summary>
+        /// <param name="teamScores">The number of goals with TeamA and TeamB</param>
+        /// <returns></returns>
         [HttpPost("ComputeTotalTeamScores")]
         public ActionResult<int[]> ComputeTotalTeamScores([FromBody] TeamScores teamScores)
         {

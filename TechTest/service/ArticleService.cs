@@ -1,6 +1,6 @@
 ﻿using TechTest.Model;
 
-namespace TechTest.service
+namespace TechTest.Service
 {
     public class ArticleService : IArticleService
     {
@@ -24,11 +24,13 @@ namespace TechTest.service
                 .ThenByDescending(x => x.title ?? x.story_title)
                 .ToList();
 
-            return articles.Take(limit).Select(x => new ArticlesResumedResponse()
-            {
-                CountComments = x.num_comments ?? 0,
-                Title = x.title ?? x.story_title ?? ""
-            }).ToList();
+            return articles
+                .Take(limit)
+                .Select(x => new ArticlesResumedResponse()
+                {
+                    CountComments = x.num_comments ?? 0,
+                    Title = x.title ?? x.story_title ?? ""
+                }).ToList();
         }
     }
 }

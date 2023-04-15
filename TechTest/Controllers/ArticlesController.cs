@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TechTest.Model;
-using TechTest.service;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using TechTest.Service;
 
 namespace TechTest.Controllers
 {
@@ -19,6 +17,11 @@ namespace TechTest.Controllers
             this.logger = logger;
         }
         // GET: api/<ArticlesController>/MostCommented/{limit}
+        /// <summary>
+        /// return the list of mos commented articles, ordered by comments and title/story_title
+        /// </summary>
+        /// <param name="limit">Limit result count</param>
+        /// <returns></returns>
         [HttpGet("MostCommented/{limit}")]
         public async Task<ActionResult<List<ArticlesResumedResponse>>> GetMostCommentedArticles([FromRoute] int limit)
         {

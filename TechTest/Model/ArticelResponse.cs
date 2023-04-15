@@ -1,6 +1,6 @@
 ﻿namespace TechTest.Model
 {
-    public class ArticelResponse
+    internal class ArticelResponse
     {
         public int page { get; set; }
         public int per_page { get; set; }

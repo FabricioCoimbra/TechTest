@@ -1,6 +1,6 @@
 ﻿using TechTest.Model;
 
-namespace TechTest.service
+namespace TechTest.Service
 {
     public interface IArticleService
     {
